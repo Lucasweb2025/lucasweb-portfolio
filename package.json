@@ -7,7 +7,9 @@
     "predev": "node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('index.dev.html','index.html')\"",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "prebuild:pages": "node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('index.dev.html','index.html')\"",
     "build:pages": "tsc -b && vite build --base=/lucasweb-portfolio/",
+    "publish:pages": "npm run build:pages && node scripts/publish-root.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

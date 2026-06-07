@@ -18,8 +18,8 @@ export const site = {
   instagramHandle: '@lucasdmxx',
   whatsapp: '5511945838316',
   whatsappDisplay: '(11) 94583-8316',
-  photo: '/images/lucas.png',
-  logo: '/images/logo-lw.png',
+  photo: `${import.meta.env.BASE_URL}images/lucas.png`,
+  logo: `${import.meta.env.BASE_URL}images/logo-lw.png`,
 } as const
 
 export const navLinks = [

@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'deploy:')
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,9 +28,11 @@ jobs:
 
       - run: npm run build:pages
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - run: node scripts/publish-root.mjs
+
+      - uses: EndBug/add-and-commit@v9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: main
-          keep_files: true
+          author_name: github-actions[bot]
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'deploy: GitHub Pages build [skip ci]'
+          add: 'index.html assets images .nojekyll favicon.png favicon.svg icons.svg'
