@@ -2,6 +2,8 @@
 
 Site portfólio profissional em React + Vite + Tailwind + Framer Motion.
 
+**Live:** [lucasweb2025.github.io/lucasweb-portfolio](https://lucasweb2025.github.io/lucasweb-portfolio/)
+
 ## Desenvolvimento
 
 ```bash
@@ -11,10 +13,9 @@ npm run dev
 
 ## Deploy (GitHub Pages)
 
-1. Crie um repositório no GitHub (ex: `lucasweb-portfolio`)
-2. Se o nome for diferente, altere o `base` em `vite.config.ts`
-3. Em **Settings → Pages**, selecione **GitHub Actions** como source
-4. Faça push para `main` — o workflow publica automaticamente
+1. Repositório: `lucasweb-portfolio`
+2. **Settings → Pages → Source:** GitHub Actions
+3. Push em `main` dispara o workflow automaticamente
 
 ## Personalizar
 
