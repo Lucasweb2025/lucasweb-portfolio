@@ -14,8 +14,8 @@ npm run dev
 ## Deploy (GitHub Pages)
 
 1. Repositório: `lucasweb-portfolio`
-2. **Settings → Pages → Source:** GitHub Actions
-3. Push em `main` dispara o workflow automaticamente
+2. **Settings → Pages → Build and deployment → Source:** selecione **GitHub Actions** (não "Deploy from a branch")
+3. Push em `main` dispara o workflow — aguarde ~2 min em **Actions**
 
 ## Personalizar
 
