@@ -13,12 +13,10 @@ npm run dev
 
 ## Deploy (GitHub Pages)
 
-1. Repositório: [Lucasweb2025/lucasweb-portfolio](https://github.com/Lucasweb2025/lucasweb-portfolio)
-2. **Settings → Pages → Build and deployment → Source:** **Deploy from a branch**
-3. **Branch:** `main` · pasta **`/docs`** → **Save** (não use `/ (root)`)
-4. Cada push em `main` roda o workflow e atualiza a pasta `docs/` (~2 min)
-
-> Tela branca = Pages está em `main` + **`/ (root)`** (código-fonte). Tem que ser **`/docs`** (build).
+1. **Settings → Pages → Source:** Deploy from a branch → `main` → **`/ (root)`**
+2. Cada push em `main` (exceto commits `deploy:`) roda o workflow e atualiza o build na raiz
+3. Site: **https://lucasweb2025.github.io/lucasweb-portfolio/**
+4. Desenvolvimento local: `npm run dev` (restaura `index.dev.html` automaticamente)
 
 ## Personalizar
 

@@ -3,8 +3,6 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main, master]
-    paths-ignore:
-      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -16,6 +14,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'deploy:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,4 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: main
-          destination_dir: docs
+          keep_files: true

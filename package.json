@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('index.dev.html','index.html')\"",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:pages": "tsc -b && vite build --base=/lucasweb-portfolio/",
