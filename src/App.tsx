@@ -1,26 +1,5 @@
-import { DemoProvider } from './context/DemoContext'
-import { Navbar } from './components/Navbar'
-import { About } from './sections/About'
-import { Contact } from './sections/Contact'
-import { Footer } from './sections/Footer'
-import { Hero } from './sections/Hero'
-import { ProjectSimulation } from './sections/ProjectSimulation'
-import { Projects } from './sections/Projects'
-import { Skills } from './sections/Skills'
+import { LucasPortfolio } from './lucas/LucasPortfolio'
 
 export default function App() {
-  return (
-    <DemoProvider>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-        <ProjectSimulation />
-      </main>
-      <Footer />
-    </DemoProvider>
-  )
+  return <LucasPortfolio />
 }

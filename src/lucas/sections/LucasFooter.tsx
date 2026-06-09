@@ -1,16 +1,16 @@
-import { ScrollReveal } from '../components/ScrollReveal'
-import { site, whatsappUrl } from '../data/site'
+import { site, whatsappUrl } from '../../data/site'
+import { FadeIn } from '../../jack/components/FadeIn'
 
-export function Footer() {
+export function LucasFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-white/5 py-8">
-      <ScrollReveal variant="fade" className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-muted md:flex-row md:px-6">
+    <footer className="border-t border-white/10 bg-[#0C0C0C] py-8">
+      <FadeIn className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-[#D7E2EA]/60 sm:flex-row sm:px-8 md:px-10">
         <p>
           © {year} {site.fullName} · {site.name}
         </p>
-        <div className="flex flex-wrap justify-center gap-5 md:justify-end">
+        <div className="flex flex-wrap justify-center gap-5">
           <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="transition hover:text-cyan">
             WhatsApp
           </a>
@@ -24,7 +24,7 @@ export function Footer() {
             Instagram
           </a>
         </div>
-      </ScrollReveal>
+      </FadeIn>
     </footer>
   )
 }

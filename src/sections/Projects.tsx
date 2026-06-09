@@ -1,4 +1,5 @@
 import { ProjectCard } from '../components/ProjectCard'
+import { ScrollReveal, StaggerReveal } from '../components/ScrollReveal'
 import { SectionHeading } from '../components/SectionHeading'
 import { projectGroups, wipProjects } from '../data/projects'
 
@@ -15,15 +16,15 @@ function ProjectGroupBlock({
 }) {
   return (
     <div className="mb-16 last:mb-0">
-      <div className="mb-8 border-l-2 border-cyan/40 pl-4">
+      <ScrollReveal variant="left" className="mb-8 border-l-2 border-cyan/40 pl-4">
         <h3 className="text-xl font-semibold text-white md:text-2xl">{title}</h3>
         <p className="mt-1 text-sm text-muted md:text-base">{subtitle}</p>
-      </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      </ScrollReveal>
+      <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={startIndex + index} />
         ))}
-      </div>
+      </StaggerReveal>
     </div>
   )
 }
@@ -65,11 +66,11 @@ export function Projects() {
             subtitle="Demos, frontends prontos e apps em teste — próximas entregas."
           />
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {wipProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} compact />
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
     </>

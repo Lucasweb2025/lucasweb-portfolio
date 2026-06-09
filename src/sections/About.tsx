@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
+import { ScrollReveal, StaggerReveal } from '../components/ScrollReveal'
 import { SectionHeading } from '../components/SectionHeading'
 import { site } from '../data/site'
+import { staggerItem } from '../lib/scrollMotion'
+
+const badges = [site.role, site.company] as const
 
 export function About() {
   return (
@@ -13,12 +17,7 @@ export function About() {
         />
 
         <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
-          <motion.div
-            className="mx-auto shrink-0 md:mx-0"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
+          <ScrollReveal variant="scale" className="mx-auto shrink-0 md:mx-0">
             <div className="glow-border overflow-hidden rounded-2xl p-1 ring-1 ring-white/10">
               <img
                 src={site.photo}
@@ -26,54 +25,45 @@ export function About() {
                 className="h-40 w-40 rounded-[0.85rem] object-cover object-[center_20%] md:h-48 md:w-48"
               />
             </div>
-          </motion.div>
+          </ScrollReveal>
 
-          <motion.div
-            className="space-y-4 text-muted leading-relaxed"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
+          <ScrollReveal variant="right" delay={0.08} className="space-y-4 text-muted leading-relaxed">
             <p className="text-lg text-white">{site.bio}</p>
             <p>{site.education}</p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <span className="rounded-full bg-white/5 px-4 py-1.5 text-sm text-cyan ring-1 ring-cyan/20">
-                {site.role}
-              </span>
-              <span className="rounded-full bg-white/5 px-4 py-1.5 text-sm text-purple ring-1 ring-purple/20">
-                {site.company}
-              </span>
-            </div>
+            <StaggerReveal className="flex flex-wrap gap-3 pt-2" stagger={0.06}>
+              {badges.map((badge, i) => (
+                <motion.span
+                  key={badge}
+                  variants={staggerItem}
+                  className={`rounded-full bg-white/5 px-4 py-1.5 text-sm ring-1 ${
+                    i === 0 ? 'text-cyan ring-cyan/20' : 'text-purple ring-purple/20'
+                  }`}
+                >
+                  {badge}
+                </motion.span>
+              ))}
+            </StaggerReveal>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white transition hover:text-cyan"
-              >
-                LinkedIn → Lucas Silva Santos
-              </a>
-              <a
-                href={site.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white transition hover:text-cyan"
-              >
-                GitHub → Lucasweb2025
-              </a>
-              <a
-                href={site.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white transition hover:text-cyan"
-              >
-                Instagram → {site.instagramHandle}
-              </a>
-            </div>
-          </motion.div>
+            <StaggerReveal className="flex flex-wrap gap-4 pt-4" stagger={0.07}>
+              {[
+                { label: 'LinkedIn → Lucas Silva Santos', href: site.linkedin },
+                { label: 'GitHub → Lucasweb2025', href: site.github },
+                { label: `Instagram → ${site.instagramHandle}`, href: site.instagram },
+              ].map((link) => (
+                <motion.a
+                  key={link.href}
+                  variants={staggerItem}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white transition hover:text-cyan"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </StaggerReveal>
+          </ScrollReveal>
         </div>
       </div>
     </section>

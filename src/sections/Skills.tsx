@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { StaggerReveal } from '../components/ScrollReveal'
 import { SectionHeading } from '../components/SectionHeading'
 import { skillGroups } from '../data/skills'
+import { staggerItem } from '../lib/scrollMotion'
 
 export function Skills() {
   return (
@@ -12,15 +14,12 @@ export function Skills() {
           subtitle="Ferramentas web, mobile e plataformas como Canvas LMS."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {skillGroups.map((group, groupIndex) => (
+        <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {skillGroups.map((group) => (
             <motion.div
               key={group.title}
+              variants={staggerItem}
               className="rounded-2xl bg-bg-card p-5 ring-1 ring-white/5"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: groupIndex * 0.08 }}
             >
               <h3 className="mb-4 font-mono text-sm font-semibold text-cyan">{group.title}</h3>
               <ul className="space-y-2">
@@ -32,7 +31,7 @@ export function Skills() {
               </ul>
             </motion.div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )

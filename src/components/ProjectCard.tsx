@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useDemo } from '../context/DemoContext'
 import type { Project } from '../data/projects'
+import { staggerItem } from '../lib/scrollMotion'
 
 type ProjectCardProps = {
   project: Project
@@ -24,18 +25,15 @@ function GitHubIcon() {
   )
 }
 
-export function ProjectCard({ project, index, compact = false }: ProjectCardProps) {
+export function ProjectCard({ project, index: _index, compact = false }: ProjectCardProps) {
   const { openDemo } = useDemo()
 
   return (
     <motion.article
+      variants={staggerItem}
       className={`glow-border group flex flex-col overflow-hidden rounded-2xl bg-bg-card ring-1 ring-white/5 transition hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,245,255,0.08)] ${
         compact ? 'opacity-90' : ''
       } ${project.wip ? 'border border-dashed border-white/10' : ''}`}
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, delay: index * 0.08 }}
     >
       <div className={`relative h-40 bg-linear-to-br ${project.gradient} overflow-hidden`}>
         <div className="absolute inset-0 bg-bg-card/20" />

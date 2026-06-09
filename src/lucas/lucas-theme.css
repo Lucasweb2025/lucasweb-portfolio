@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --lucas-bg: #0c0c0c;
+  --lucas-text: #d7e2ea;
+  --lucas-cyan: #00f5ff;
+  --lucas-purple: #a855f7;
+  --lucas-neon: #39ff14;
+  --lucas-muted: #94a3b8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: var(--lucas-bg);
+  font-family: 'Kanit', sans-serif;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #8ba4b8 0%, #d7e2ea 45%, #00f5ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.lucas-accent-heading {
+  background: linear-gradient(135deg, var(--lucas-cyan) 0%, var(--lucas-purple) 55%, var(--lucas-neon) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.lucas-card {
+  border: 2px solid color-mix(in srgb, var(--lucas-text) 35%, transparent);
+  background: var(--lucas-bg);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lucas-card:hover {
+  border-color: color-mix(in srgb, var(--lucas-cyan) 50%, transparent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--lucas-cyan) 12%, transparent);
+}
+
+.lucas-btn-primary {
+  background: linear-gradient(135deg, #006d75 0%, var(--lucas-cyan) 35%, var(--lucas-purple) 100%);
+  box-shadow:
+    0 4px 16px color-mix(in srgb, var(--lucas-cyan) 25%, transparent),
+    inset 0 0 0 2px color-mix(in srgb, white 80%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lucas-card {
+    transition: none;
+  }
+}

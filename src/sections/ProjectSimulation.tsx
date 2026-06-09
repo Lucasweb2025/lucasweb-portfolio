@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { useDemo } from '../context/DemoContext'
+import { ScrollReveal } from '../components/ScrollReveal'
 import { SectionHeading } from '../components/SectionHeading'
 
 export function ProjectSimulation() {
@@ -14,11 +14,9 @@ export function ProjectSimulation() {
           subtitle="Explore uma versão demo do front — dados fictícios, sem conexão com sistemas reais."
         />
 
-        <motion.div
+        <ScrollReveal
+          variant="scale"
           className="glow-border overflow-hidden rounded-3xl bg-linear-to-br from-cyan/10 via-bg-card to-purple/10 ring-1 ring-white/10"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
         >
           <div className="grid md:grid-cols-2">
             <div className="relative flex min-h-[220px] flex-col justify-center border-b border-white/5 p-8 md:min-h-[320px] md:border-r md:border-b-0 md:p-10">
@@ -67,7 +65,7 @@ export function ProjectSimulation() {
               <p className="absolute bottom-4 right-6 text-xs text-muted">Mais simuladores em breve</p>
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { ScrollReveal, StaggerReveal } from '../components/ScrollReveal'
 import { SectionHeading } from '../components/SectionHeading'
 import { site, whatsappUrl } from '../data/site'
+import { staggerItem } from '../lib/scrollMotion'
 
 const channels = [
   {
@@ -43,46 +45,28 @@ export function Contact() {
           subtitle="Aberto a projetos web, sistemas internos, freelas e parcerias."
         />
 
-        <motion.div
-          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {channels.map((channel, index) => (
+        <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {channels.map((channel) => (
             <motion.a
               key={channel.name}
+              variants={staggerItem}
               href={channel.href}
               target="_blank"
               rel="noopener noreferrer"
               className={`glow-border flex flex-col rounded-2xl p-5 ring-1 ring-white/5 transition hover:-translate-y-0.5 ${
-                channel.primary
-                  ? 'bg-linear-to-br from-neon/10 to-cyan/5'
-                  : 'bg-bg-card'
+                channel.primary ? 'bg-linear-to-br from-neon/10 to-cyan/5' : 'bg-bg-card'
               }`}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06 }}
             >
-              <span className="font-mono text-xs uppercase tracking-wider text-cyan">
-                {channel.name}
-              </span>
+              <span className="font-mono text-xs uppercase tracking-wider text-cyan">{channel.name}</span>
               <span className="mt-2 text-sm font-medium text-white">{channel.detail}</span>
               <span className="mt-3 text-xs text-muted">Clique para abrir →</span>
             </motion.a>
           ))}
-        </motion.div>
+        </StaggerReveal>
 
-        <motion.p
-          className="mx-auto mt-8 max-w-xl text-center text-sm text-muted"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
+        <ScrollReveal variant="fade" delay={0.15} className="mx-auto mt-8 max-w-xl text-center text-sm text-muted">
           Respondo por WhatsApp e LinkedIn. Para ver código e repos, acesse o GitHub.
-        </motion.p>
+        </ScrollReveal>
       </div>
     </section>
   )
