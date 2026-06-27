@@ -10,8 +10,13 @@ export type Project = {
   githubUrl?: string
   badges?: string[]
   gradient: string
+  image?: string
   wip?: boolean
   demoId?: DemoId
+}
+
+export function projectImage(filename: string) {
+  return `${import.meta.env.BASE_URL}images/projects/${filename}`
 }
 
 export type ProjectGroup = {
@@ -84,6 +89,32 @@ export const clientProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/allpink',
     badges: ['Concluído', 'Cliente real'],
     gradient: 'from-pink-500/30 via-purple-500/20 to-transparent',
+  },
+  {
+    id: 'globalgesso',
+    title: 'Global Gesso',
+    description:
+      'Site institucional e sistema operacional para empresa de gesso e drywall: landing com orçamento, galeria de obras, painel admin e portal de campo para equipe.',
+    stack: ['Next.js', 'Supabase', 'Tailwind CSS'],
+    stats: ['Domínio próprio', 'Painel admin', 'Portal de campo'],
+    liveUrl: 'https://globalgesso.com.br/',
+    githubUrl: 'https://github.com/Lucasweb2025/globalgesso',
+    badges: ['Concluído', 'Cliente real'],
+    gradient: 'from-slate-500/25 via-cyan-500/15 to-transparent',
+    image: projectImage('globalgesso.jpg'),
+  },
+  {
+    id: 'anapaula',
+    title: 'Ana Paula Psicóloga',
+    description:
+      'Site profissional para psicóloga com apresentação de serviços, FAQ, agendamento online, PWA instalável e painel administrativo com Firebase.',
+    stack: ['React', 'Firebase', 'PWA'],
+    stats: ['Site no ar', 'Agenda online', 'Atendimento online'],
+    liveUrl: 'https://psicologa-anapaula.web.app/',
+    githubUrl: 'https://github.com/Lucasweb2025/psicologa-anapaula',
+    badges: ['Concluído', 'Cliente real'],
+    gradient: 'from-sky-500/25 via-blue-500/15 to-transparent',
+    image: projectImage('anapaula.jpg'),
   },
 ]
 

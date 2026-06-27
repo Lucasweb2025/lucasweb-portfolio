@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react'
 import { useDemo } from '../../context/DemoContext'
 import type { Project } from '../../data/projects'
 import { staggerItem } from '../../lib/scrollMotion'
+import { ProjectCover } from './ProjectCover'
 
 type LucasProjectCardProps = {
   project: Project
@@ -20,15 +21,9 @@ export function LucasProjectCard({ project, index: _index, compact = false }: Lu
         compact ? 'opacity-95' : ''
       } ${project.wip ? 'border-dashed' : ''}`}
     >
-      <div className={`relative h-44 bg-linear-to-br ${project.gradient} overflow-hidden`}>
-        <div className="absolute inset-0 bg-[#0C0C0C]/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-mono text-5xl font-black text-white/15 transition group-hover:text-cyan/25">
-            {project.title.slice(0, 2).toUpperCase()}
-          </span>
-        </div>
+      <ProjectCover project={project} className="h-44">
         {project.badges && (
-          <div className="absolute left-4 top-4 flex flex-wrap gap-1.5">
+          <div className="absolute left-4 top-4 z-10 flex flex-wrap gap-1.5">
             {project.badges.map((badge) => (
               <span
                 key={badge}
@@ -39,7 +34,7 @@ export function LucasProjectCard({ project, index: _index, compact = false }: Lu
             ))}
           </div>
         )}
-      </div>
+      </ProjectCover>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <h3 className="text-lg font-semibold uppercase tracking-wide text-[#D7E2EA]">{project.title}</h3>

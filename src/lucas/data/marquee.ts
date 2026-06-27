@@ -11,6 +11,7 @@ export type LucasMarqueeItem = {
   label: string
   gradient: string
   stat?: string
+  image?: string
 }
 
 function toMarqueeItem(project: Project, label?: string): LucasMarqueeItem {
@@ -20,6 +21,7 @@ function toMarqueeItem(project: Project, label?: string): LucasMarqueeItem {
     label: label ?? project.badges?.[1] ?? project.badges?.[0] ?? 'Projeto',
     gradient: project.gradient,
     stat: project.stats?.[0],
+    image: project.image,
   }
 }
 

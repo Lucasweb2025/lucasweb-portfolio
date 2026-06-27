@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { lucasMarqueeRow1, lucasMarqueeRow2, type LucasMarqueeItem } from '../data/marquee'
-
 function tripleItems<T>(items: T[]) {
   return [...items, ...items, ...items]
 }
@@ -10,6 +9,15 @@ function MarqueeTile({ item }: { item: LucasMarqueeItem }) {
     <div
       className={`lucas-card relative flex h-[200px] w-[300px] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-5 sm:h-[220px] sm:w-[340px] md:h-[240px] md:w-[360px] bg-linear-to-br ${item.gradient}`}
     >
+      {item.image && (
+        <img
+          src={item.image}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          loading="lazy"
+        />
+      )}
       <div className="absolute inset-0 bg-[#0C0C0C]/55" />
       <div className="relative z-10">
         <p className="font-mono text-xs uppercase tracking-widest text-cyan">{item.label}</p>

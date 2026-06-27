@@ -8,6 +8,7 @@ import { FadeIn } from '../../jack/components/FadeIn'
 import { ScrollReveal } from '../../components/ScrollReveal'
 import { LucasLiveButton } from '../components/LucasLiveButton'
 import { LucasProjectCard } from '../components/LucasProjectCard'
+import { ProjectCover } from '../components/ProjectCover'
 
 const featuredProjects = [
   laCustomProjects[0],
@@ -74,7 +75,10 @@ function FeaturedCard({
           </div>
         </div>
 
-        <div className={`mb-4 h-40 rounded-[32px] bg-linear-to-br sm:h-48 md:h-52 md:rounded-[40px] ${project.gradient}`} />
+        <ProjectCover
+          project={project}
+          className="mb-4 h-40 rounded-[32px] sm:h-48 md:h-52 md:rounded-[40px]"
+        />
         <p className="max-w-3xl text-sm leading-relaxed text-[#D7E2EA]/80 md:text-base">
           {project.description}
         </p>
