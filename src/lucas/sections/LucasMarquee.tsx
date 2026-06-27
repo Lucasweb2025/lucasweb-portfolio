@@ -8,12 +8,12 @@ function tripleItems<T>(items: T[]) {
 function MarqueeTile({ item }: { item: LucasMarqueeItem }) {
   return (
     <div
-      className={`lucas-card relative flex h-[270px] w-[420px] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-6 bg-linear-to-br ${item.gradient}`}
+      className={`lucas-card relative flex h-[200px] w-[300px] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-5 sm:h-[220px] sm:w-[340px] md:h-[240px] md:w-[360px] bg-linear-to-br ${item.gradient}`}
     >
       <div className="absolute inset-0 bg-[#0C0C0C]/55" />
       <div className="relative z-10">
         <p className="font-mono text-xs uppercase tracking-widest text-cyan">{item.label}</p>
-        <h3 className="mt-2 text-2xl font-bold uppercase text-[#D7E2EA]">{item.title}</h3>
+        <h3 className="mt-2 text-lg font-bold uppercase text-[#D7E2EA] sm:text-xl">{item.title}</h3>
       </div>
       {item.stat && (
         <span className="relative z-10 w-fit rounded-full border border-cyan/30 px-3 py-1 font-mono text-xs text-cyan">
@@ -66,7 +66,7 @@ export function LucasMarquee() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="overflow-x-clip bg-[#0C0C0C] pt-24 pb-10 sm:pt-32 md:pt-40">
+    <section ref={sectionRef} className="overflow-x-clip bg-[#0C0C0C] pt-16 pb-8 sm:pt-20 md:pt-24">
       <p className="mb-8 text-center font-mono text-xs uppercase tracking-[0.3em] text-cyan/80">
         Projetos no ar · L.A Custom & clientes reais
       </p>

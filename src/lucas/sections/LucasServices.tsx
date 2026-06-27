@@ -5,11 +5,11 @@ export function LucasServices() {
   return (
     <section
       id="skills"
-      className="rounded-t-[40px] bg-white px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="rounded-t-[40px] bg-white px-5 py-16 sm:rounded-t-[50px] sm:px-8 sm:py-20 md:rounded-t-[60px] md:px-10 md:py-24"
     >
       <h2
-        className="mb-16 text-center font-black uppercase text-[#0C0C0C] sm:mb-20 md:mb-28"
-        style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+        className="mb-12 text-center font-black uppercase text-[#0C0C0C] sm:mb-16 md:mb-20"
+        style={{ fontSize: 'var(--heading-display)' }}
       >
         O que <span className="lucas-accent-heading">faço</span>
       </h2>
@@ -20,14 +20,14 @@ export function LucasServices() {
             <article className="flex flex-col gap-4 border-t border-[rgba(12,12,12,0.15)] py-8 sm:flex-row sm:items-start sm:gap-8 sm:py-10 md:py-12">
               <span
                 className="shrink-0 font-black text-[#0C0C0C]"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+                style={{ fontSize: 'var(--heading-section)' }}
               >
                 {service.number}
               </span>
               <div className="flex flex-col gap-3">
                 <h3
                   className="font-medium uppercase text-[#0C0C0C]"
-                  style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
+                  style={{ fontSize: 'var(--heading-sub)' }}
                 >
                   {service.name}
                 </h3>

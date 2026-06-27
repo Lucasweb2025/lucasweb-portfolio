@@ -16,13 +16,13 @@ export function LucasContact() {
   return (
     <section
       id="contato"
-      className="bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 md:py-28"
+      className="bg-[#0C0C0C] px-5 py-16 sm:px-8 md:px-10 md:py-20"
     >
       <FadeIn y={40} className="mb-12 text-center">
         <p className="mb-2 font-mono text-sm uppercase tracking-widest text-cyan">Contato</p>
         <h2
           className="font-black uppercase leading-none tracking-tight"
-          style={{ fontSize: 'clamp(3rem, 12vw, 120px)' }}
+          style={{ fontSize: 'var(--heading-display)' }}
         >
           <span className="hero-heading">Vamos </span>
           <span className="lucas-accent-heading">conversar?</span>

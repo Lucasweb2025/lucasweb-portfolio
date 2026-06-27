@@ -30,17 +30,20 @@ export function LucasHero() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.15} y={40} className="mt-6 overflow-hidden px-6 sm:mt-4 md:-mt-5 md:px-10">
-        <h1 className="w-full whitespace-nowrap text-[13vw] font-black uppercase leading-none tracking-tight sm:text-[14vw] md:text-[15vw] lg:text-[16vw]">
+      <FadeIn delay={0.15} y={40} className="mx-auto mt-6 w-full max-w-7xl overflow-hidden px-6 sm:mt-4 md:-mt-2 md:px-10">
+        <h1
+          className="w-full font-black uppercase leading-none tracking-tight"
+          style={{ fontSize: 'var(--heading-hero)' }}
+        >
           <span className="hero-heading">Oi, sou </span>
           <span className="lucas-accent-heading">{site.name.toLowerCase()}</span>
         </h1>
       </FadeIn>
 
       <Magnet
-        padding={150}
+        padding={90}
         strength={3}
-        className="absolute left-1/2 z-10 w-[240px] -translate-x-1/2 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 sm:w-[320px] md:w-[400px] lg:w-[480px]"
+        className="absolute left-1/2 z-10 w-[200px] -translate-x-1/2 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 sm:w-[260px] md:w-[320px] lg:w-[360px]"
       >
         <FadeIn delay={0.6} y={30}>
           <div className="relative">

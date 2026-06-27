@@ -5,12 +5,12 @@ export function LucasSimulation() {
   const { openDemo } = useDemo()
 
   return (
-    <section id="simulacao" className="border-t border-white/5 bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 md:py-28">
+    <section id="simulacao" className="border-t border-white/5 bg-[#0C0C0C] px-5 py-16 sm:px-8 md:px-10 md:py-20">
       <FadeIn y={40} className="mb-10 text-center">
         <p className="mb-2 font-mono text-sm uppercase tracking-widest text-cyan">Interativo</p>
         <h2
           className="font-black uppercase leading-none tracking-tight"
-          style={{ fontSize: 'clamp(2.5rem, 10vw, 100px)' }}
+          style={{ fontSize: 'var(--heading-display)' }}
         >
           <span className="hero-heading">Torre de </span>
           <span className="lucas-accent-heading">controle</span>

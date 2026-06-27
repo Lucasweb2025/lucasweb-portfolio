@@ -35,16 +35,16 @@ function FeaturedCard({
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale])
 
   return (
-    <div ref={containerRef} className="relative h-[85vh]" style={{ top: `${index * 28}px` }}>
+    <div ref={containerRef} className="relative h-[60vh] md:h-[min(70vh,640px)]" style={{ top: `${index * 20}px` }}>
       <motion.article
-        className="sticky top-24 rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:top-32 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="sticky top-20 rounded-[32px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:top-24 sm:rounded-[40px] sm:p-5 md:rounded-[40px] md:p-6"
         style={{ scale }}
       >
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:gap-6">
             <span
               className="font-black text-[#D7E2EA]"
-              style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+              style={{ fontSize: 'var(--heading-section)' }}
             >
               {String(index + 1).padStart(2, '0')}
             </span>
@@ -54,7 +54,7 @@ function FeaturedCard({
               </p>
               <h3
                 className="font-medium uppercase text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(1.25rem, 3vw, 2.5rem)' }}
+                style={{ fontSize: 'var(--heading-sub)' }}
               >
                 {project.title}
               </h3>
@@ -74,7 +74,7 @@ function FeaturedCard({
           </div>
         </div>
 
-        <div className={`mb-4 h-48 rounded-[40px] bg-linear-to-br sm:h-56 md:h-64 md:rounded-[60px] ${project.gradient}`} />
+        <div className={`mb-4 h-40 rounded-[32px] bg-linear-to-br sm:h-48 md:h-52 md:rounded-[40px] ${project.gradient}`} />
         <p className="max-w-3xl text-sm leading-relaxed text-[#D7E2EA]/80 md:text-base">
           {project.description}
         </p>
@@ -111,7 +111,7 @@ function ProjectGroupBlock({
       <ScrollReveal variant="left" className="mb-8 border-l-2 border-cyan/40 pl-4">
         <h3
           className="font-semibold uppercase text-[#D7E2EA]"
-          style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}
+          style={{ fontSize: 'var(--heading-sub)' }}
         >
           {title}
         </h3>
@@ -133,19 +133,19 @@ export function LucasProjects() {
     <>
       <section
         id="projetos"
-        className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32"
+        className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-20 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-24"
       >
-        <FadeIn y={40} className="mb-16 sm:mb-20 md:mb-24">
+        <FadeIn y={40} className="mb-12 sm:mb-16 md:mb-20">
           <h2
             className="text-center font-black uppercase leading-none tracking-tight"
-            style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+            style={{ fontSize: 'var(--heading-display)' }}
           >
             <span className="hero-heading">Meus </span>
             <span className="lucas-accent-heading">projetos</span>
           </h2>
         </FadeIn>
 
-        <div className="mx-auto mb-24 max-w-6xl">
+        <div className="mx-auto mb-16 max-w-6xl">
           {featuredProjects.map((project, index) => (
             <FeaturedCard
               key={project.id}
@@ -175,13 +175,13 @@ export function LucasProjects() {
 
       <section
         id="em-andamento"
-        className="border-t border-white/5 bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 md:py-28"
+        className="border-t border-white/5 bg-[#0C0C0C] px-5 py-16 sm:px-8 md:px-10 md:py-20"
       >
         <FadeIn y={40} className="mb-12">
           <p className="mb-2 text-center font-mono text-sm uppercase tracking-widest text-cyan">Pipeline</p>
           <h3
             className="text-center font-black uppercase text-[#D7E2EA]"
-            style={{ fontSize: 'clamp(2rem, 8vw, 80px)' }}
+            style={{ fontSize: 'clamp(1.75rem, 5vw, 3.5rem)' }}
           >
             Em andamento
           </h3>

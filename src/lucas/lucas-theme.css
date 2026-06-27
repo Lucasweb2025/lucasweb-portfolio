@@ -7,6 +7,12 @@
   --lucas-purple: #a855f7;
   --lucas-neon: #39ff14;
   --lucas-muted: #94a3b8;
+  --site-max: 72rem;
+  --heading-hero: clamp(2.75rem, 8vw, 7rem);
+  --heading-display: clamp(2.5rem, 6vw, 5.5rem);
+  --heading-section: clamp(2rem, 5vw, 4.5rem);
+  --heading-sub: clamp(1.25rem, 2.5vw, 2rem);
+  --section-y: clamp(3rem, 6vw, 5rem);
 }
 
 *,
