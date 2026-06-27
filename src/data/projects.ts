@@ -37,6 +37,7 @@ export const laCustomProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/torredecontrole',
     badges: ['Concluído', 'L.A Custom'],
     gradient: 'from-cyan-500/30 via-purple-500/20 to-transparent',
+    image: projectImage('torre.jpg'),
     demoId: 'torre',
   },
   {
@@ -50,6 +51,7 @@ export const laCustomProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/la-custom-performance-campanha',
     badges: ['Concluído', 'L.A Custom'],
     gradient: 'from-amber-500/25 via-yellow-500/15 to-transparent',
+    image: projectImage('performance.jpg'),
   },
   {
     id: 'checklist',
@@ -62,6 +64,7 @@ export const laCustomProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/checklist',
     badges: ['Concluído', 'L.A Custom'],
     gradient: 'from-emerald-500/20 via-cyan-500/15 to-transparent',
+    image: projectImage('checklist.jpg'),
   },
 ]
 
@@ -77,6 +80,7 @@ export const clientProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/nataliaandrade',
     badges: ['Concluído', 'Cliente real'],
     gradient: 'from-purple-500/30 via-pink-500/20 to-transparent',
+    image: projectImage('nathalia.jpg'),
   },
   {
     id: 'allpink',
@@ -89,6 +93,7 @@ export const clientProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/allpink',
     badges: ['Concluído', 'Cliente real'],
     gradient: 'from-pink-500/30 via-purple-500/20 to-transparent',
+    image: projectImage('allpink.jpg'),
   },
   {
     id: 'globalgesso',
@@ -142,6 +147,7 @@ export const wipProjects: Project[] = [
     liveUrl: 'https://saas-loja-286c0.web.app',
     badges: ['Demo', 'Em andamento'],
     gradient: 'from-neon/20 via-cyan-500/15 to-transparent',
+    image: projectImage('vitrine.jpg'),
     wip: true,
   },
   {
@@ -155,6 +161,7 @@ export const wipProjects: Project[] = [
     githubUrl: 'https://github.com/Lucasweb2025/laestoque',
     badges: ['Frontend', 'Em andamento'],
     gradient: 'from-cyan-500/15 via-blue-500/10 to-transparent',
+    image: projectImage('laestoque.jpg'),
     wip: true,
   },
   {

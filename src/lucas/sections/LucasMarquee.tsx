@@ -7,9 +7,9 @@ function tripleItems<T>(items: T[]) {
 function MarqueeTile({ item }: { item: LucasMarqueeItem }) {
   return (
     <div
-      className={`lucas-card relative flex h-[200px] w-[300px] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-5 sm:h-[220px] sm:w-[340px] md:h-[240px] md:w-[360px] bg-linear-to-br ${item.gradient}`}
+      className={`lucas-card relative flex h-[200px] w-[300px] shrink-0 flex-col justify-end overflow-hidden rounded-2xl sm:h-[220px] sm:w-[340px] md:h-[240px] md:w-[360px] bg-linear-to-br ${item.gradient}`}
     >
-      {item.image && (
+      {item.image ? (
         <img
           src={item.image}
           alt=""
@@ -17,17 +17,19 @@ function MarqueeTile({ item }: { item: LucasMarqueeItem }) {
           className="absolute inset-0 h-full w-full object-cover object-top"
           loading="lazy"
         />
-      )}
-      <div className="absolute inset-0 bg-[#0C0C0C]/55" />
-      <div className="relative z-10">
-        <p className="font-mono text-xs uppercase tracking-widest text-cyan">{item.label}</p>
-        <h3 className="mt-2 text-lg font-bold uppercase text-[#D7E2EA] sm:text-xl">{item.title}</h3>
+      ) : null}
+      <div className="absolute inset-0 bg-linear-to-t from-[#0C0C0C] via-[#0C0C0C]/70 to-[#0C0C0C]/20" />
+      <div className="relative z-10 flex h-full flex-col justify-between p-5">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-cyan">{item.label}</p>
+          <h3 className="mt-2 text-lg font-bold uppercase text-[#D7E2EA] sm:text-xl">{item.title}</h3>
+        </div>
+        {item.stat && (
+          <span className="w-fit rounded-full border border-cyan/30 bg-[#0C0C0C]/60 px-3 py-1 font-mono text-xs text-cyan backdrop-blur-sm">
+            {item.stat}
+          </span>
+        )}
       </div>
-      {item.stat && (
-        <span className="relative z-10 w-fit rounded-full border border-cyan/30 px-3 py-1 font-mono text-xs text-cyan">
-          {item.stat}
-        </span>
-      )}
     </div>
   )
 }
