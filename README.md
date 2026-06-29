@@ -18,8 +18,19 @@ npm run dev
 3. Site: **https://lucasweb2025.github.io/lucasweb-portfolio/**
 4. Desenvolvimento local: `npm run dev` (restaura `index.dev.html` automaticamente)
 
+## Estrutura do código
+
+```
+src/
+  paginas/       # Página principal
+  secoes/        # Hero, Sobre, Projetos, Contato…
+  componentes/   # UI reutilizável e demo Torre
+  dados/         # Textos, projetos, serviços
+  estilos/       # CSS global e tema
+```
+
 ## Personalizar
 
-- **WhatsApp / contato:** `src/data/site.ts`
-- **Projetos:** `src/data/projects.ts`
-- **Skills:** `src/data/skills.ts`
+- **WhatsApp / contato:** `src/dados/site.ts`
+- **Projetos:** `src/dados/projetos.ts`
+- **Serviços:** `src/dados/servicos.ts`

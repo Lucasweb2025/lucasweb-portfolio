@@ -1,5 +1,5 @@
-import { LucasPortfolio } from './lucas/LucasPortfolio'
+import { PaginaPortfolio } from './paginas/Portfolio'
 
 export default function App() {
-  return <LucasPortfolio />
+  return <PaginaPortfolio />
 }
