@@ -11,6 +11,7 @@ export type Projeto = {
   etiquetas?: string[]
   gradiente: string
   imagem?: string
+  imagens?: string[]
   emAndamento?: boolean
   idDemo?: IdDemo
 }
@@ -174,6 +175,12 @@ export const projetosEmAndamento: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/veiculoexterno2',
     etiquetas: ['APK em testes', 'Em andamento'],
     gradiente: 'from-green-500/15 via-cyan-500/10 to-transparent',
+    imagem: imagemProjeto('veiculos.jpg'),
+    imagens: [
+      imagemProjeto('veiculos.jpg'),
+      imagemProjeto('veiculos-mapa.jpg'),
+      imagemProjeto('veiculos-corrida.jpg'),
+    ],
     emAndamento: true,
   },
 ]
