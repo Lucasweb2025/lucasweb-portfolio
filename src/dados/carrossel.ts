@@ -25,12 +25,23 @@ function projetoParaCarrossel(projeto: Projeto, rotulo?: string): ItemCarrossel 
   }
 }
 
-const entregues = [...projetosLaCustom, ...projetosClientes]
+const porId = Object.fromEntries(
+  [...projetosLaCustom, ...projetosClientes].map((projeto) => [projeto.id, projeto]),
+) as Record<string, Projeto>
 
-export const linhaCarrossel1: ItemCarrossel[] = entregues.slice(0, 6).map((p) => projetoParaCarrossel(p))
+/** Linha de cima — inclui Doces da Dih e Leticia Santos Makeup */
+export const linhaCarrossel1: ItemCarrossel[] = [
+  'torre',
+  'performance',
+  'nathalia',
+  'docesdadih',
+  'leticia',
+  'anapaula',
+].map((id) => projetoParaCarrossel(porId[id]))
 
+/** Linha de baixo — demais clientes + projetos em andamento */
 export const linhaCarrossel2: ItemCarrossel[] = [
-  ...entregues.slice(6).map((p) => projetoParaCarrossel(p)),
+  ...['checklist', 'allpink', 'globalgesso'].map((id) => projetoParaCarrossel(porId[id])),
   ...projetosEmAndamento.slice(0, 2).map((p) =>
     projetoParaCarrossel(p, p.etiquetas?.[0] ?? 'Em andamento'),
   ),

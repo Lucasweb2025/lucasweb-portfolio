@@ -122,6 +122,32 @@ export const projetosClientes: Projeto[] = [
     gradiente: 'from-sky-500/25 via-blue-500/15 to-transparent',
     imagem: imagemProjeto('anapaula.jpg'),
   },
+  {
+    id: 'docesdadih',
+    titulo: 'Doces da Dih',
+    descricao:
+      'Catálogo online de bolo de pote: vitrine com carrossel, sacola e pedido no WhatsApp, mais painel admin para cadastrar produtos com foto em tempo real.',
+    tecnologias: ['HTML/JS', 'Firebase', 'PWA'],
+    destaques: ['Vitrine ao vivo', 'Pedido WhatsApp', 'Painel admin'],
+    urlAoVivo: 'https://doces-da-dih.web.app/',
+    urlGithub: 'https://github.com/Lucasweb2025/docesdadih',
+    etiquetas: ['Concluído', 'Cliente real'],
+    gradiente: 'from-amber-500/30 via-rose-500/20 to-transparent',
+    imagem: imagemProjeto('docesdadih.jpg'),
+  },
+  {
+    id: 'leticia',
+    titulo: 'Leticia Santos Makeup',
+    descricao:
+      'PWA de maquiagem e cabelo a domicílio: site institucional, agenda em tempo real, painel admin com dashboard, galeria e bloqueio de dias.',
+    tecnologias: ['React', 'Firebase', 'PWA'],
+    destaques: ['Agenda ao vivo', 'Painel admin', 'PWA instalável'],
+    urlAoVivo: 'https://leticiasantosmakeuphair.web.app/',
+    urlGithub: 'https://github.com/Lucasweb2025/leticiamakeup',
+    etiquetas: ['Concluído', 'Cliente real'],
+    gradiente: 'from-rose-500/25 via-amber-500/15 to-transparent',
+    imagem: imagemProjeto('leticia.jpg'),
+  },
 ]
 
 export const projetosIgreja: Projeto[] = [
