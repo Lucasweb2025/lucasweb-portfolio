@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { linhaCarrossel1, linhaCarrossel2, type ItemCarrossel } from '../dados/carrossel'
+import {
+  linhaCarrossel1,
+  linhaCarrossel2,
+  linhaCarrossel3,
+  type ItemCarrossel,
+} from '../dados/carrossel'
 
 function triplicarItens<T>(itens: T[]) {
   return [...itens, ...itens, ...itens]
@@ -79,11 +84,12 @@ export function SecaoCarrossel() {
   return (
     <section ref={refSecao} className="overflow-x-clip bg-[#0C0C0C] pt-16 pb-8 sm:pt-20 md:pt-24">
       <p className="mb-8 text-center font-mono text-xs uppercase tracking-[0.3em] text-cyan/80">
-        Projetos no ar · L.A Custom & clientes reais
+        Projetos no ar · clientes reais, L.A Custom & pipeline
       </p>
       <div className="flex flex-col gap-3">
         <LinhaCarrossel itens={linhaCarrossel1} direcao="direita" deslocamento={deslocamento} />
         <LinhaCarrossel itens={linhaCarrossel2} direcao="esquerda" deslocamento={deslocamento} />
+        <LinhaCarrossel itens={linhaCarrossel3} direcao="direita" deslocamento={deslocamento} />
       </div>
     </section>
   )
