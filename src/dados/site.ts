@@ -15,7 +15,7 @@ export const site = {
   instagramUsuario: '@lucasdmxx',
   whatsapp: '5511945838316',
   whatsappExibicao: '(11) 94583-8316',
-  foto: `${import.meta.env.BASE_URL}images/lucas.png`,
+  foto: `${import.meta.env.BASE_URL}images/lucas.jpg`,
   logo: `${import.meta.env.BASE_URL}images/logo-lw.png`,
 } as const
 
