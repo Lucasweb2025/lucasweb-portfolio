@@ -78,6 +78,7 @@ export const projetosLaCustom: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/equipamentosla',
     etiquetas: ['Concluído', 'L.A Custom'],
     gradiente: 'from-blue-500/25 via-cyan-500/15 to-transparent',
+    imagem: imagemProjeto('equipamentos.jpg'),
   },
   {
     id: 'laoperation',
@@ -203,6 +204,7 @@ export const projetosClientes: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/ajengenharia',
     etiquetas: ['Concluído', 'Cliente real'],
     gradiente: 'from-orange-500/25 via-amber-500/15 to-transparent',
+    imagem: imagemProjeto('ajengenharia.jpg'),
   },
   {
     id: 'artedapalha',
@@ -224,6 +226,7 @@ export const projetosClientes: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/filipe-fresh-welcome',
     etiquetas: ['Concluído', 'Cliente real'],
     gradiente: 'from-lime-500/25 via-green-500/15 to-transparent',
+    imagem: imagemProjeto('mercadofilipi.jpg'),
   },
   {
     id: 'mercadoleblon',
@@ -235,6 +238,7 @@ export const projetosClientes: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/filipe-s-market-app',
     etiquetas: ['Concluído', 'Cliente real'],
     gradiente: 'from-green-500/25 via-emerald-500/15 to-transparent',
+    imagem: imagemProjeto('mercadoleblon.jpg'),
   },
   {
     id: 'allpinkfinanceiro',
@@ -331,6 +335,7 @@ export const projetosEmAndamento: Projeto[] = [
     urlGithub: 'https://github.com/Lucasweb2025/focus-and-flow',
     etiquetas: ['Demo', 'Em andamento'],
     gradiente: 'from-violet-500/20 via-fuchsia-500/15 to-transparent',
+    imagem: imagemProjeto('focusflow.jpg'),
     emAndamento: true,
   },
   {
